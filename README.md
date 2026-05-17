@@ -7,4 +7,13 @@ To accurately benchmark against Antwerp Space’s reference algorithm, the FAU w
 
 Results showed that the HLS-generated algorithm matched the VHDL reference functionality and successfully met the timing requirements. While on smaller blocks the HLS had higher resource usage, as the blocks increased in complexity and the entire monolithic algorithm was synthesized, the resource efficiency matched or even outperformed the VHDL reference. Therefore, while HLS loses some fine-grained control over small isolated blocks, it is highly viable for complex algorithms. In the monolithic approach, the compiler gained full data path visibility, and thus the interface management and pipeline scheduling were taken over directly by the Vitis HLS engine, resulting in the best results. This research  thus demonstrated the viability of using Vitis HLS to develop high-performance DSP algorithms.
 
+# Repository Structure
+To keep the different architectural explorations isolated and organized, this repository is divided into three branches:
 
+- ModularHLS: Contains the Vitis HLS source files for the modular approach. Each functional block of the Fast Acquisition Unit (FAU) is implemented, optimized, and synthesized as an individual IP.
+
+- MonolithicHLS: Contains the Vitis HLS files for the monolithic approach. The entire FAU algorithm is integrated into a single C++ project.
+
+- ExtraHLS: Contains additional research and alternative implementations not featured in the main body of the thesis (using external libraries and academic FFT architectures).
+
+**Important note regarding testbenches:** > While the C++ testbench files are included, the required input and reference output files are were removed. These data files are proprietary to Antwerp Space and cannot be distributed.
