@@ -18,7 +18,7 @@ To keep the different architectural explorations isolated and organized, this re
 
 **Important note regarding testbenches:** > While the C++ testbench files are included, the required input and reference output files are were removed. These data files are proprietary to Antwerp Space and cannot be distributed.
 
-## Acknowledgments & AI Usage Disclaimer
+## Acknowledgments & AI Use Disclaimer
 
 Google's Gemini AI was used as an assistive tool during the development of this project in particular to help with:
 * **Code:** C++ logic for High-Level Synthesis.
