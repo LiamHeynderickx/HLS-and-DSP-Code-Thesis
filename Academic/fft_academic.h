@@ -1,3 +1,10 @@
+/*
+ * * Acknowledgment: 
+ * Parts of this code were developed with the assistance of Google's Gemini AI.
+ * * Reference:
+ * Gemini. (3.1 Pro) Google. Accessed: May 17, 2026. [Online]. Available: https://gemini.google.com
+ */
+ 
 #ifndef FFT_H
 #define FFT_H
 
