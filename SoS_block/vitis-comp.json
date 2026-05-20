@@ -1,0 +1,12 @@
+{
+  "name": "SoS_block",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "SoS_block"
+  },
+  "template": "empty_hls_component"
+}

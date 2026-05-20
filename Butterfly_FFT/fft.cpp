@@ -7,7 +7,6 @@
  
 #include "fft.h"
 
-// INLINE bit reversal at input
 unsigned int reverse_bits(unsigned int x) {
     #pragma HLS INLINE
     unsigned int result = 0;
@@ -19,40 +18,39 @@ unsigned int reverse_bits(unsigned int x) {
     return result;
 }
 
-
-//top function
 void fft_top(fft_stream_type& x_i, fft_stream_type& y_o) {
+
+    #pragma HLS INTERFACE axis port=x_i
+    #pragma HLS INTERFACE axis port=y_o
+    #pragma HLS INTERFACE ap_ctrl_none port=return
 
     #pragma HLS AGGREGATE variable=x_i compact=bit
     #pragma HLS AGGREGATE variable=y_o compact=bit
-    #pragma HLS INLINE // Changed from PIPELINE II=4 to allow the dsp top to manage Interval
-    #pragma HLS BIND_OP op=mul impl=dsp latency=4
+
+    #pragma HLS PIPELINE II=4
 
     static const TwiddleTable<N / 2> twiddle_rom;
-    inputVectorType reg_layers[LOG2_N + 1][N]; 
+    static inputVectorType reg_layers[LOG2_N + 1][N];
     #pragma HLS ARRAY_PARTITION variable=reg_layers type=complete dim=0
 
     fft_stream_type x_local = x_i; 
     fft_stream_type y_local;
 
-    // Call bit reversal on Inputs to match DIT
+    //Bit reversal on input
     for (int j = 0; j < N; j++) {
         #pragma HLS UNROLL
         reg_layers[0][reverse_bits(j)] = x_local.data[j]; 
     }
 
-    //construciton of FFT structure, forward butterfly layer instantiation
-    // UNROLL ensures it is done in parallel and not sequentially
-
-    stage_instantiation: for (int stage = 0; stage < LOG2_N; stage++) { //this loop builds log2N layers
+    //butterflies
+    stage_instantiation: for (int stage = 0; stage < LOG2_N; stage++) { 
         #pragma HLS UNROLL
-        int stride = 1 << stage;               // Defines distance between butterfly points (1, 2, 4, 8, 16)
-        int step = (N >> 1) >> stage;          // which twiddle to use, how many indicies to skip (16, 8, 4, 2, 1)
+        int stride = 1 << stage;          
+        int step = (N >> 1) >> stage;          
 
-        loop_groups: for (int start = 0; start < N; start += (stride * 2)) { //groups butterflys in each stage till all in final form 1 group
+        loop_groups: for (int start = 0; start < N; start += (stride * 2)) { 
             #pragma HLS UNROLL
-
-            loop_butterflies: for (int k = 0; k < stride; k++) { //creates physical butterflys
+            loop_butterflies: for (int k = 0; k < stride; k++) { 
                 #pragma HLS UNROLL
                 inputVectorType a = reg_layers[stage][start + k];
                 inputVectorType b = reg_layers[stage][start + k + stride];
@@ -62,7 +60,7 @@ void fft_top(fft_stream_type& x_i, fft_stream_type& y_o) {
                 tw.re = twiddle_rom.re[tw_idx];
                 tw.im = twiddle_rom.im[tw_idx];
 
-                butterfly(a, b, tw); // call butterfly op
+                butterfly(a, b, tw);
 
                 reg_layers[stage + 1][start + k] = a;
                 reg_layers[stage + 1][start + k + stride] = b;
@@ -70,7 +68,7 @@ void fft_top(fft_stream_type& x_i, fft_stream_type& y_o) {
         }
     }
 
-    //read outputs into registers
+    //read output
     write_loop: for (int j = 0; j < N; j++) {
         #pragma HLS UNROLL
         y_local.data[j] = reg_layers[LOG2_N][j];

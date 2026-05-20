@@ -1,0 +1,11 @@
+{
+  "name": "Correlator",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "C:\\Thesis\\HLS_Vitis_DSP_thesis\\correlator\\hls_component\\hls_config.cfg"
+    ],
+    "work_dir": "subcorrelator_top"
+  }
+}

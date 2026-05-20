@@ -1,6 +1,6 @@
 #  Benchmarking of Vitis HLS
-## Monolithic implementation of FAU
-This branch contains the files for monolithic implementation of the FAU. The C++, header and testbench files are present. The input and output files for the testebenches were removed as they are proprietary to Antwerp Space.
+## Modular implementation of FAU
+This branch contains the files for modular implementation of the FAU. The C++, header and testbench files are present. The input and output files for the testebenches were removed as they are proprietary to Antwerp Space.
 
 ## Acknowledgments & AI Use Disclaimer
 

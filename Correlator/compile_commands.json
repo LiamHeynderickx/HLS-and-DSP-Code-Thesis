@@ -1,0 +1,26 @@
+[
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\Correlator",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "",
+      "-c",
+      "C:/Thesis/VitisIPsAll/Correlator/correlator.cpp"
+    ],
+    "file": "C:/Thesis/VitisIPsAll/Correlator/correlator.cpp"
+  },
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\Correlator",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\include",
+      "",
+      "-c",
+      "C:/Thesis/VitisIPsAll/Correlator/correlator_tb.cpp"
+    ],
+    "file": "C:/Thesis/VitisIPsAll/Correlator/correlator_tb.cpp"
+  }
+]

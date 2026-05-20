@@ -1,12 +1,12 @@
 {
-  "name": "combined_FAU",
+  "name": "Peak_Memory",
   "type": "HLS",
   "configuration": {
     "componentType": "HLS",
     "configFiles": [
       "hls_config.cfg"
     ],
-    "work_dir": "combined_FAU"
+    "work_dir": "Peak_Memory"
   },
   "template": "empty_hls_component"
 }

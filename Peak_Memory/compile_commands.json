@@ -1,0 +1,14 @@
+[
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\Peak_Memory",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "",
+      "-c",
+      "C:\\Thesis\\VitisIPsAll\\Peak_Memory\\peak_memory.cpp"
+    ],
+    "file": "C:\\Thesis\\VitisIPsAll\\Peak_Memory\\peak_memory.cpp"
+  }
+]

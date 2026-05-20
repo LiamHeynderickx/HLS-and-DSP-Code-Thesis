@@ -15,9 +15,7 @@
 #define LOG2_N 5
 
 //input data
-// 16 total bits
-// Changed AP_SAT to AP_WRAP to save massive amounts of LUTs
-typedef ap_fixed<16, 12, AP_TRN, AP_WRAP> data_t; 
+typedef ap_fixed<16,12, AP_TRN, AP_WRAP> data_t; 
 
 struct inputVectorType {
     data_t re;
@@ -25,8 +23,7 @@ struct inputVectorType {
 };
 
 //twidles
-typedef ap_fixed<16, 10, AP_TRN, AP_WRAP> twiddle_t; // New Twiddle Type, needs more decimal precision
-// New struct for the twiddles
+typedef ap_fixed<16, 10, AP_TRN, AP_WRAP> twiddle_t; 
 struct twiddleVectorType {
     twiddle_t re;
     twiddle_t im;
@@ -34,7 +31,7 @@ struct twiddleVectorType {
 
 template <int SIZE>
 struct TwiddleTable {
-    twiddle_t re[SIZE]; 
+    twiddle_t re[SIZE];
     twiddle_t im[SIZE]; 
 
     TwiddleTable() {
@@ -47,10 +44,12 @@ struct TwiddleTable {
 };
 
 
-// Pack the entire 32-bin array into a single struct for the wide AXI bus
+//input and output streams
 struct fft_stream_type {
     inputVectorType data[N];
 };
+
+
 
 void butterfly(inputVectorType& a, inputVectorType& b, twiddleVectorType tw);
 

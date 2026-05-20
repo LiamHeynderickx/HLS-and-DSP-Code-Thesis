@@ -1,0 +1,38 @@
+[
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "",
+      "-c",
+      "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\fft.cpp"
+    ],
+    "file": "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\fft.cpp"
+  },
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "",
+      "-c",
+      "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\Butterfly.cpp"
+    ],
+    "file": "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\Butterfly.cpp"
+  },
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\include",
+      "",
+      "-c",
+      "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\fft_tb_file.cpp"
+    ],
+    "file": "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\fft_tb_file.cpp"
+  }
+]

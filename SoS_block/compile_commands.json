@@ -1,0 +1,38 @@
+[
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\SoS_block",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "",
+      "-c",
+      "C:/ThesisHLS/HLS-and-DSP-Code-Thesis/SoS_block/sum_of_squares.cpp"
+    ],
+    "file": "C:/ThesisHLS/HLS-and-DSP-Code-Thesis/SoS_block/sum_of_squares.cpp"
+  },
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\SoS_block",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls",
+      "-hls-syn-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\common\\technology\\autopilot",
+      "",
+      "-c",
+      "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\sum_of_squares.cpp"
+    ],
+    "file": "C:\\Thesis\\VitisIPsAll\\Butterfly_FFT\\sum_of_squares.cpp"
+  },
+  {
+    "directory": "C:\\Thesis\\VitisIPsAll\\SoS_block",
+    "arguments": [
+      "C:\\Xilinx\\Vitis_HLS\\2024.1\\vcxx\\libexec\\clang++.exe",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=C:\\Xilinx\\Vitis_HLS\\2024.1\\include",
+      "",
+      "-c",
+      "C:/ThesisHLS/HLS-and-DSP-Code-Thesis/SoS_block/sum_of_squares_tb.cpp"
+    ],
+    "file": "C:/ThesisHLS/HLS-and-DSP-Code-Thesis/SoS_block/sum_of_squares_tb.cpp"
+  }
+]

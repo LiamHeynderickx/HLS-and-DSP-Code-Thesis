@@ -1,0 +1,12 @@
+{
+  "name": "Peak_Detector_block",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "Peak_Detector_block"
+  },
+  "template": "empty_hls_component"
+}

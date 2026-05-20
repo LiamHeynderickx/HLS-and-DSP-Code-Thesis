@@ -4,25 +4,29 @@
  * * Reference:
  * Gemini. (3.1 Pro) Google. Accessed: May 17, 2026. [Online]. Available: https://gemini.google.com
  */
- 
+
 #ifndef CORRELATOR_H  
 #define CORRELATOR_H
+
+#define AP_INT_MAX_W 4096
 
 #include "ap_fixed.h"
 #include <ap_int.h>       
 #include <hls_stream.h>   
 #include <cmath>
-   
+
+//FFT configurations
+const int N = 32;           
+const int LOG2_N = 5;       
 const int UF = 4;      
 
-// Spatial Correlator Config
+//Correlator configurations
 const int CHIPS_PER_SUBCOR = 64;
 const int NUMBER_OF_SUBCOR = 16;
 const int SAMPLES_PER_SUBCOR = CHIPS_PER_SUBCOR * 2; 
 const int TOTAL_SAMPLES = NUMBER_OF_SUBCOR * SAMPLES_PER_SUBCOR; // 2048
 const int CODE_LENGTH = NUMBER_OF_SUBCOR * CHIPS_PER_SUBCOR;     // 1024
 
-// AXI Stream Data Types
 typedef ap_fixed<16, 12, AP_TRN, AP_WRAP> data_t; 
 
 // --- UPDATED SIGNATURE ---
@@ -39,4 +43,4 @@ void subcorrelator_top(
     hls::stream<ap_uint<1024> > &fft_out_stream 
 );
 
-#endif // CORRELATOR_H
+#endif
