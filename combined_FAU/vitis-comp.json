@@ -1,11 +1,12 @@
 {
-  "name": "FFT_SSR_lib",
+  "name": "combined_FAU",
   "type": "HLS",
   "configuration": {
     "componentType": "HLS",
     "configFiles": [
       "hls_config.cfg"
     ],
-    "work_dir": "FFT_SSR_lib"
-  }
+    "work_dir": "combined_FAU"
+  },
+  "template": "empty_hls_component"
 }

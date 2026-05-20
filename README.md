@@ -1,6 +1,6 @@
 #  Benchmarking of Vitis HLS
-## Extra HLS research
-This branch contains the files for the academic and library implementation of the FFT explored in the process of this thesis. These are not discussed in the main body of the thesis but can be found in the appendix 
+## Monolithic implementation of FAU
+This branch contains the files for monolithic implementation of the FAU. The C++, header and testbench files are present. The input and output files for the testebenches were removed as they are proprietary to Antwerp Space.
 
 ## Acknowledgments & AI Use Disclaimer
 
